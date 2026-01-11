@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Future Academy | Excellence in Education</title>
+    <meta name="description"
+        content="Welcome to Bright Future Academy - Redefining modern education with excellence, innovation, and care.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-graduation-cap fa-2x"></i>
+                    <h1>BFA</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <!-- <li><a href="#teachers">Teachers</a></li> -->
+                    <!-- <li><a href="#achievements">Achievements</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="auth-link"><a href="#" onclick="openModal('loginModal')">Login</a></li>
+                    <li class="auth-link"><a href="#" onclick="openModal('signupModal')">Sign Up</a></li>
+                    <li class="theme-toggle-item">
+                        <button id="theme-toggle" class="theme-btn">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Empowering Minds, Shaping Futures</h2>
+                <p>Nurturing curiosity, fostering creativity, and building character in every student through excellence
+                    in education.</p>
+                <div class="hero-btns">
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Our school</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-img">
+                        <img src="images/photo-1562774053-701939374585.avif" alt="Bright Future Academy Campus">
+                    </div>
+                    <div class="about-text">
+                        <h3>Defining The Standard of Education</h3>
+                        <p>Bright Future Academy has been a beacon of knowledge for over two decades. We believe in a
+                            holistic approach to education that combines academic rigor with character development.</p>
+                        <p>Our state-of-the-art facilities and dedicated faculty provide an environment where students
+                            can thrive and discover their true potential.</p>
+                        <ul style="margin-top: 20px;">
+                            <li><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Globally
+                                Recognized Curriculum</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Focus on
+                                Innovation & Creativity</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Inclusive &
+                                Diverse Community</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teachers Section -->
+        <section id="teachers">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Expert Faculty</h2>
+                </div>
+                <div class="teachers-grid">
+                    <!-- Teacher 1 -->
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="images/photo-1544168190-79c17527004f.avif" alt="Dr. Sarah Johnson">
+                        </div>
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p style="color: var(--primary-color); font-weight: 600;">Principal & Mathematics</p>
+                        <p>A visionary leader with 20 years of experience in educational excellence.</p>
+                    </div>
+                    <!-- Teacher 2 -->
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="images/photo-1568602471122-7832951cc4c5.avif" alt="Teacher 2">
+                        </div>
+                        <h3>Prof. Robert Miller</h3>
+                        <p style="color: var(--primary-color); font-weight: 600;">Science Department Head</p>
+                        <p>Passionate about making science accessible and exciting for every student.</p>
+                    </div>
+                    <!-- Teacher 3 -->
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="images/photo-1573496359142-b8d87734a5a2.avif" alt="Teacher 3">
+                        </div>
+                        <h3>Ms. Elena Rodriguez</h3>
+                        <p style="color: var(--primary-color); font-weight: 600;">English Literature</p>
+                        <p>Inspiring students to find their voice through the power of world literature.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Campus Life & Memories</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/photo-1509062522246-3755977927d7.avif" alt="Classroom Activity">
+                        <div class="gallery-overlay">
+                            <span>Interactive Learning</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/photo-1531058020387-3be344556be6.avif" alt="Sports Day">
+                        <div class="gallery-overlay">
+                            <span>Annual Sports Meet</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/photo-1511578314322-379afb476865.avif" alt="Annual Day">
+                        <div class="gallery-overlay">
+                            <span>Cultural Festival</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/photo-1521587760476-6c12a4b040da.avif" alt="Library">
+                        <div class="gallery-overlay">
+                            <span>Quiet Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Scholarships Section -->
+        <section id="scholarships" style="background-color: var(--bg-pastel-blue);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Apply for Scholarship</h2>
+                </div>
+                <div class="contact-form"
+                    style="max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: var(--shadow);">
+                    <form id="scholarshipForm">
+                        <input type="text" name="name" placeholder="Student Name" required>
+                        <input type="text" name="father_name" placeholder="Father's Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                        <div style="display: flex; gap: 20px;">
+                            <input type="text" name="class" placeholder="Class / Grade" required>
+                            <input type="number" name="marks" placeholder="Previous Marks (%)" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Student Achievements</h2>
+                </div>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                        <h3>National Science Fair</h3>
+                        <p>Gold Medal in the National Innovative Science Projects 2025.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+                        <h3>State Basketball Champions</h3>
+                        <p>Under-17 State Level Basketball Championship Winners.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-star"></i></div>
+                        <h3>Academic Excellence</h3>
+                        <p>100% Success rate in board examinations for 10 consecutive years.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Education Lane, Academic City, ST 54321</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@brightfuture.edu</p>
+                        <div class="social-links" style="margin-top: 30px;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="admissionForm">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-user-circle"></i>
+                <h2>Welcome Back</h2>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Enter Username" required>
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                    <button type="submit" class="btn btn-primary auth-btn">Login</button>
+                    <div class="modal-footer">
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"
+                                style="width: auto; margin-right: 5px;"> Remember me
+                        </label>
+                        <p>Forgot <a href="#">password?</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signupModal')">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-user-plus"></i>
+                <h2>Create Account</h2>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm">
+                    <label>Email</label>
+                    <input type="text" name="email" placeholder="Enter Email" required>
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                    <label>Repeat Password</label>
+                    <input type="password" name="repeat_password" placeholder="Repeat Password" required>
+                    <button type="submit" class="btn btn-primary auth-btn">Sign Up</button>
+                    <div class="modal-footer">
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"
+                                style="width: auto; margin-right: 5px;"> Remember me
+                        </label>
+                        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h1>Bright Future</h1>
+                    </div>
+                    <p style="margin-top: 15px; opacity: 0.8;">Inspiring excellence, nurturing talent, and preparing
+                        students for a bright and successful future.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#teachers">Our Teachers</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Admissions</h3>
+                    <ul>
+                        <li><a href="#">How to Apply</a></li>
+                        <li><a href="#">Fee Structure</a></li>
+                        <li><a href="#">Scholarships</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.9rem;">Subscribe to get the latest updates and news.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Email">
+                        <button class="btn btn-primary">Join</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Bright Future Academy. All Rights Reserved. Designed with</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
