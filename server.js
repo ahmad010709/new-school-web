@@ -10,6 +10,7 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname));
 
 // MySQL Connection Configuration
 const dbConfig = {
@@ -80,15 +81,18 @@ app.post('/api/login', (req, res) => {
         return res.status(400).send('Please provide username and password.');
     }
 
-    const sql = 'SELECT * FROM account WHERE username = ? AND password = ?';
-    db.query(sql, [username, password], (err, results) => {
+    const sql = 'SELECT * FROM account WHERE (username = ? OR email = ?) AND password = ?';
+    db.query(sql, [username, username, password], (err, results) => {
         if (err) {
             console.error(err);
             return res.status(500).send('Server error');
         }
 
         if (results.length > 0) {
-            res.status(200).send('Login successful!');
+            res.status(200).json({
+                message: 'Login successful!',
+                user: { username: results[0].username, email: results[0].email }
+            });
         } else {
             res.status(401).send('Invalid username or password');
         }
@@ -97,14 +101,14 @@ app.post('/api/login', (req, res) => {
 
 // Scholarship Application Route
 app.post('/api/scholarship', (req, res) => {
-    const { name, father_name, email, phone, class: studentClass, marks } = req.body;
+    const { name, father_name, email, phone, class: studentClass } = req.body;
 
-    if (!name || !father_name || !email || !phone || !studentClass || !marks) {
+    if (!name || !father_name || !email || !phone || !studentClass) {
         return res.status(400).send('Please fill all fields.');
     }
 
-    const sql = 'INSERT INTO scholarships (name, father_name, email, phone, class, marks) VALUES (?, ?, ?, ?, ?, ?)';
-    db.query(sql, [name, father_name, email, phone, studentClass, marks], (err, result) => {
+    const sql = 'INSERT INTO scholarships (name, father_name, email, phone, class) VALUES (?, ?, ?, ?, ?)';
+    db.query(sql, [name, father_name, email, phone, studentClass], (err, result) => {
         if (err) {
             console.error(err);
             return res.status(500).send('Server error');

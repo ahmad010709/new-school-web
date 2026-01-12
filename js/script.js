@@ -64,6 +64,13 @@ if (admissionForm) {
     admissionForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        // Check if user is logged in
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            alert('Please login first to submit the form.');
+            openModal('loginModal');
+            return;
+        }
+
         const formData = new FormData(admissionForm);
         const data = Object.fromEntries(formData.entries());
 
@@ -176,9 +183,13 @@ if (loginForm) {
             });
 
             if (response.ok) {
+                const result = await response.json();
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('user', JSON.stringify(result.user));
                 alert('Login Successful!');
                 closeModal('loginModal');
-                // Create session or redirect here
+                // Optional: Update UI to show logged in state
+                location.reload(); // Simple way to refresh and show logged in state if needed
             } else {
                 alert('Invalid Username or Password');
             }
@@ -229,6 +240,14 @@ const scholarshipForm = document.getElementById('scholarshipForm');
 if (scholarshipForm) {
     scholarshipForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        // Check if user is logged in
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            alert('Please login first to apply for a scholarship.');
+            openModal('loginModal');
+            return;
+        }
+
         const formData = new FormData(scholarshipForm);
         const data = Object.fromEntries(formData.entries());
 
@@ -251,3 +270,35 @@ if (scholarshipForm) {
         }
     });
 }
+
+// Update Nav for Logged In User
+function updateNav() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const authLinks = document.querySelectorAll('.auth-link');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (isLoggedIn) {
+        // Hide Login/Signup
+        authLinks.forEach(link => link.style.display = 'none');
+
+        // Add Logout link if it doesn't exist
+        if (!document.getElementById('logout-btn')) {
+            const logoutLi = document.createElement('li');
+            logoutLi.id = 'logout-btn';
+            logoutLi.innerHTML = '<a href="#" onclick="logout()">Logout</a>';
+            // Insert before theme toggle
+            const themeToggleItem = document.querySelector('.theme-toggle-item');
+            navLinks.insertBefore(logoutLi, themeToggleItem);
+        }
+    }
+}
+
+window.logout = function () {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('user');
+    alert('Logged out successfully!');
+    location.reload();
+}
+
+// Call updateNav on load
+document.addEventListener('DOMContentLoaded', updateNav);
